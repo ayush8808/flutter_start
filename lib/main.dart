@@ -13,21 +13,22 @@ class _MyApp extends StatefulWidget {
 
 class _MyAppState extends State<_MyApp> {
   var _questionIndex = 0;
-  void _AnsQues(a) {
+  var _question = [
+    'What is your favarite animal ?',
+    'What is your favorite color ?',
+  ];
+  void _AnsQues() {
     setState(() {
       _questionIndex += 1;
-      if (_questionIndex == a.length) {
+      if (_questionIndex == _question.length) {
         _questionIndex = 0;
       }
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
-    var _question = [
-      'What is your favarite animal ?',
-      'What is your favorite color ?',
-    ];
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
@@ -40,13 +41,9 @@ class _MyAppState extends State<_MyApp> {
                 Question(
                   _question[_questionIndex],
                 ),
-                ElevatedButton(
-                  onPressed: () => _AnsQues(_question),
-                  child: Text("Option 1"),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.purple,
-                  ),
-                )
+                Answer(_AnsQues),
+                Answer(_AnsQues),
+                Answer(_AnsQues),
               ],
             ),
           ),
