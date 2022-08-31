@@ -13,12 +13,12 @@ class _MyApp extends StatefulWidget {
 
 class _MyAppState extends State<_MyApp> {
   var _questionIndex = 0;
-  var _question = [
+  const _question = const [
     {'question':'What is your favarite animal ?',
     'answer':['Lion','rabbit','dog','cat'],},
 
     {'question':'What is your favorite color ?',
-    'answer':['green','blue','black','yellow'],},
+    'answer':['green','blue','black','grey'],},
 
     {'question':'What is your favarite brand ?',
     'answer':['Dell','HP','Apple','Asus'],},
